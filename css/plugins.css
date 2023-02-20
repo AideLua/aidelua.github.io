@@ -1,0 +1,11 @@
+.cardTitle {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.downloadBtn {
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    margin: 16px;
+}
