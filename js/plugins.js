@@ -18,24 +18,30 @@ const menus = [
 ]
 
 let app = createApp({
-  setup() {
+  data() {
+    const plugins = ref(null)
+    const isTop = ref(true)
+    const isLoaded = ref(false)
     fetch(PLUGINS_URL)
       .then((res) => res.json())
-      .then((json) => (plugins.value = json))
+      .then((json) => {
+        plugins.value = json
+        isLoaded.value = true
+      })
       .catch(function (error) {
         console.error(error)
       })
-    const plugins = ref(null)
-    const isTop = ref(true)
+
     return {
       plugins,
       menus,
-      isTop
+      isTop,
+      isLoaded,
     }
   },
   mounted() {
-    this.isTop=getTopState(window)
-    window.addEventListener('scroll', () => this.isTop=getTopState(window))
+    this.isTop = getTopState(window)
+    window.addEventListener('scroll', () => this.isTop = getTopState(window))
     mdui.mutation()
   },
   updated() {

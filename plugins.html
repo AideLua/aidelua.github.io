@@ -41,38 +41,43 @@
 <body class="mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-indigo mdui-theme-layout-auto">
     <div id="app">
         <!-- 标题栏 -->
-        <div class="mdui-appbar jesse205-shadow-transition mdui-appbar-fixed"
-            :class="{'mdui-shadow-0':isTop,'mdui-shadow-4':!isTop}">
-            <div class="mdui-toolbar">
-                <p class="mdui-typo-title">Aide Lua 插件库</p>
-                <div class="mdui-toolbar-spacer"></div>
-                <template v-if="menus">
-                    <!-- 菜单区域 -->
-                    <template v-for="item in menus" :key="item.title">
-                        <a v-if="item.type=='menu'" :href="item.href"
-                            class="jesse205-btn-icon-text mdui-btn mdui-hidden-xs-down"
-                            :targrt="item.target">{{item.title}}</a>
-                    </template>
-                    <!-- 更多菜单按钮 -->
-                    <div class="mdui-btn mdui-btn-icon mdui-hidden-sm-up" mdui-menu="{target: '#menu-more'}"
-                        mdui-tooltip="{'content':'更多选项'}">
-                        <i class="mdui-icon material-icons">more_vert</i>
-                    </div>
-                    <!-- 弹出菜单 -->
-                    <ul class="mdui-menu" id="menu-more">
-                        <div>
-                            <template v-for="item in menus" :key="item.title">
-                                <li v-if="item.type=='menu'" class="mdui-menu-item">
-                                    <a :href="item.href" class="mdui-ripple" :targrt="item.target">{{item.title}}</a>
-                                </li>
-                                <li v-else-if="item.type=='divider'" class="mdui-divider"></li>
-                            </template>
+        <header>
+            <div class="mdui-appbar jesse205-shadow-transition mdui-appbar-fixed"
+                :class="{'mdui-shadow-0':isTop,'mdui-shadow-4':!isTop}">
+                <div class="mdui-toolbar">
+                    <p class="mdui-typo-title">Aide Lua 插件库</p>
+                    <div class="mdui-toolbar-spacer"></div>
+                    <template v-if="menus">
+                        <!-- 菜单区域 -->
+                        <template v-for="item in menus" :key="item.title">
+                            <a v-if="item.type=='menu'" :href="item.href"
+                                class="jesse205-btn-icon-text mdui-btn mdui-hidden-xs-down"
+                                :targrt="item.target">{{item.title}}</a>
+                        </template>
+                        <!-- 更多菜单按钮 -->
+                        <div class="mdui-btn mdui-btn-icon mdui-hidden-sm-up" mdui-menu="{target: '#menu-more'}"
+                            mdui-tooltip="{'content':'更多选项'}">
+                            <i class="mdui-icon material-icons">more_vert</i>
                         </div>
-                    </ul>
-                </template>
+                        <!-- 弹出菜单 -->
+                        <ul class="mdui-menu" id="menu-more">
+                            <div>
+                                <template v-for="item in menus" :key="item.title">
+                                    <li v-if="item.type=='menu'" class="mdui-menu-item">
+                                        <a :href="item.href" class="mdui-ripple"
+                                            :targrt="item.target">{{item.title}}</a>
+                                    </li>
+                                    <li v-else-if="item.type=='divider'" class="mdui-divider"></li>
+                                </template>
+                            </div>
+                        </ul>
+                    </template>
+                </div>
             </div>
+        </header>
+        <div v-if="!isLoaded" class="spinnerParent">
+            <div class="mdui-spinner"></div>
         </div>
-
         <div v-if="plugins" id="plugins"
             class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4 mdui-row-xl-5 mdui-grid-list mdui-m-a-1">
             <div v-for="item in plugins" class="mdui-col mdui-p-a-1">
