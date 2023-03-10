@@ -65,7 +65,9 @@
             <div>
               <template v-for="item in menus" :key="item.title">
                 <li v-if="item.type=='menu'" class="mdui-menu-item">
-                  <a :href="item.href" class="mdui-ripple" :targrt="item.target">{{item.title}}</a>
+                  <a :href="item.href" class="mdui-ripple"
+                    :class="{'mdui-text-color-theme-accent': pathname==item.href }"
+                    :targrt="item.target">{{item.title}}</a>
                 </li>
                 <li v-else-if="item.type=='divider'" class="mdui-divider"></li>
               </template>

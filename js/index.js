@@ -1,6 +1,6 @@
 const { createApp, ref, watchEffect } = Vue
 
-const APPCONFIG_URL = "https://gitee.com/api/v5/repos/Jesse205/AideLua/releases/latest"
+const RELEASES_URL = "https://gitee.com/api/v5/repos/Jesse205/AideLua/releases/latest"
 
 
 let app = createApp({
@@ -18,7 +18,7 @@ let app = createApp({
         },
         {
           title: '插件下载',
-          href: 'plugins.html',
+          href: '/plugins.html',
           target: '_blank',
           type: 'menu'
         },
@@ -144,8 +144,11 @@ let app = createApp({
   setup() {
     const appConfig = ref(null)
 
-    fetch(APPCONFIG_URL)
-      .then((res) => res.json())
+    fetch(RELEASES_URL)
+      .then((response) => response.json())
+      .catch(function (error) {
+        console.error(error)
+      })
       .then((json) => (appConfig.value = json))
       .catch(function (error) {
         console.error(error)
