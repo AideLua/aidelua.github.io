@@ -147,11 +147,11 @@ var app = createApp({
     fetch(RELEASES_URL)
       .then((response) => response.json())
       .catch(function (error) {
-        console.error(error)
+        console.warn(error)
       })
       .then((json) => (appConfig.value = json))
       .catch(function (error) {
-        console.error(error)
+        console.warn(error)
       })
     return {
       appConfig
