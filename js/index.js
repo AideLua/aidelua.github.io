@@ -3,7 +3,7 @@ const { createApp, ref, watchEffect } = Vue
 const RELEASES_URL = "https://gitee.com/api/v5/repos/Jesse205/AideLua/releases/latest"
 
 
-let app = createApp({
+var app = createApp({
   data: () => {
     return {
       pathname: window.location.pathname,
@@ -47,22 +47,22 @@ let app = createApp({
       screenshot: [
         {
           title: '丰富的支持库',
-          summary: '多种多样的支持库，帮助用户解决选择困难症',
+          summary: '多种多样的支持库，帮助用户战胜选择困难症',
           src: 'images/screenshot_libraries.jpg'
         },
         {
           title: '强大的模板',
-          summary: '采用模块化模板，大幅提升了模板开发难度',
+          summary: '采用模块化模板，大幅提升了模板定制难度',
           src: 'images/screenshot_template.jpg'
         },
         {
           title: '自由的插件',
-          summary: '随时可能出问题的插件，培养用户良好的查错习惯',
+          summary: '随时出问题的插件，提升用户应急处突能力',
           src: 'images/screenshot_plugins.jpg'
         },
         {
           title: '卡顿的体验',
-          summary: '作者正在竭尽全力通过此工具帮你摆脱手机开发',
+          summary: '非常卡顿的体验，慢慢帮助用户摆脱手机开发',
           src: 'images/screenshot_lag.jpg'
         }
       ],
@@ -167,6 +167,3 @@ let app = createApp({
   }
 })
 
-$$(function () {
-  app.mount('#app')
-})

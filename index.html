@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
-  <meta name="sharename" itemprop="name" content="Aide Lua Pro" />
-  <!-- <meta name="shareimage" itemprop="image" content="https://p.qlogo.cn/gh/628045718/628045718/" /> -->
-  <meta name="description" itemprop="description" content="依赖 AIDE ，使用 Lua 快速、高效开发的工具" />
-  <meta name="keywords" itemprop="keywords" content="lua|androlua|alua|aidelua" />
-  <meta name="author" content="&copy;0047ol" />
+  <meta name="sharename" content="Aide Lua Pro" />
+  <meta name="shareimage" content="https://p.qlogo.cn/gh/628045718/628045718/" />
+  <meta name="description" content="依赖 AIDE ，使用 Lua 快速、高效开发的工具" />
+  <meta name="keywords" content="lua|androlua|alua|aidelua|aide" />
+  <meta name="author" content="0047ol,Jesse205" />
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -39,89 +39,89 @@
   <script src="js/index.js"></script>
 </head>
 
-<body class="mdui-theme-primary-indigo mdui-theme-accent-indigo mdui-theme-layout-auto">
+<body class="mdui-theme-primary-blue mdui-theme-accent-blue mdui-theme-layout-auto">
   <div id="app">
-    <header>
-      <!-- 标题栏 -->
-      <div class="mdui-appbar jesse205-shadow-transition mdui-appbar-fixed"
-        :class="{'mdui-shadow-0':isTop,'mdui-shadow-4':!isTop}">
-        <div id="toolbar" class="mdui-toolbar" :class="{'toolbar-top':isTop}"
-          style="transition: all .2s cubic-bezier(.4, 0, .2, 1)">
-          <p class="mdui-typo-title">{{name}}</p>
-          <div class="mdui-toolbar-spacer"></div>
+    <!-- 标题栏 -->
+    <nav class="mdui-appbar jesse205-shadow-transition mdui-appbar-fixed"
+      :class="{'mdui-shadow-0':isTop,'mdui-shadow-4':!isTop}">
+      <div id="toolbar" class="toolbar mdui-toolbar" :class="{'toolbar-unfloat':isTop,'jesse205-toolbar-float':!isTop}">
+        <p class="mdui-typo-title">{{name}}</p>
+        <div class="mdui-toolbar-spacer"></div>
 
-          <!-- 菜单区域 -->
-          <template v-for="item in menus" :key="item.title">
-            <a v-if="item.type=='menu'" :href="item.href" class="jesse205-btn-icon-text mdui-btn mdui-hidden-xs-down"
-              :class="{'mdui-text-color-theme-accent': pathname==item.href }" :targrt="item.target">{{item.title}}</a>
-          </template>
-          <!-- 更多菜单按钮 -->
-          <div class="mdui-btn mdui-btn-icon mdui-hidden-sm-up" mdui-menu="{target: '#menu-more'}"
-            mdui-tooltip="{'content':'更多选项'}">
-            <i class="mdui-icon material-icons">more_vert</i>
-          </div>
-          <!-- 弹出菜单 -->
-          <ul class="mdui-menu" id="menu-more">
-            <div>
-              <template v-for="item in menus" :key="item.title">
-                <li v-if="item.type=='menu'" class="mdui-menu-item">
-                  <a :href="item.href" class="mdui-ripple"
-                    :class="{'mdui-text-color-theme-accent': pathname==item.href }"
-                    :targrt="item.target">{{item.title}}</a>
-                </li>
-                <li v-else-if="item.type=='divider'" class="mdui-divider"></li>
-              </template>
-            </div>
-          </ul>
-
+        <!-- 菜单区域 -->
+        <template v-for="item in menus" :key="item.title">
+          <a v-if="item.type=='menu'" :href="item.href" class="jesse205-btn-icon-text mdui-btn mdui-hidden-xs-down"
+            :class="{'mdui-text-color-theme-accent': pathname==item.href }" :targrt="item.target">{{item.title}}</a>
+        </template>
+        <!-- 更多菜单按钮 -->
+        <div class="mdui-btn mdui-btn-icon mdui-hidden-sm-up" mdui-menu="{target: '#menu-more'}"
+          mdui-tooltip="{'content':'更多选项'}">
+          <i class="mdui-icon material-icons">more_vert</i>
         </div>
+        <!-- 弹出菜单 -->
+        <ul class="mdui-menu" id="menu-more">
+          <div>
+            <template v-for="item in menus" :key="item.title">
+              <li v-if="item.type=='menu'" class="mdui-menu-item">
+                <a :href="item.href" class="mdui-ripple" :class="{'mdui-text-color-theme-accent': pathname==item.href }"
+                  :targrt="item.target">{{item.title}}</a>
+              </li>
+              <li v-else-if="item.type=='divider'" class="mdui-divider"></li>
+            </template>
+          </div>
+        </ul>
       </div>
-    </header>
-    <div class="hero">
-      <img src="images/top_background.png" draggable="false" alt />
+    </nav>
+
+    <header>
+      <img class="cover" src="images/top_background.png" draggable="false" alt />
       <div>
         <img class="icon mdui-shadow-4" src="images/aidelua_logo.svg" alt />
         <h1 class="app-title mdui-text-color-theme-accent">{{name}}</h1>
-        <p class="app-summary mdui-text-color-theme-secondary">{{description}}</p>
+        <h2 class="app-summary mdui-text-color-theme-secondary">{{description}}</h2>
+
         <div class="app-goup-btn">
           <a id="download" class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent"
             href="https://gitee.com/AideLua/AideLua/releases/latest" target="_blank">
             下载 {{appConfig && `(${appConfig.tag_name})`}}</a>
           <a class="mdui-btn mdui-ripple" href="https://gitee.com/AideLua/AideLua" target="_blank">Gitee 仓库</a>
         </div>
-      </div>
-    </div>
 
-    <div class="divider"></div>
+      </div>
+    </header>
+
+    <hr />
 
     <div class="screenshots group mdui-container-fluid mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-4">
       <div>
         <div v-for="item in screenshot" class="screenshot-item mdui-container mdui-col">
-          <h1 class="title mdui-text-color-theme-accent">{{item.title}}</h1>
+          <h4 class="title mdui-text-color-theme-accent">{{item.title}}</h4>
           <p class="subtitle mdui-text-color-theme-secondary">{{item.summary}}</p>
           <img class="screenshot jesse205-card-outlined" :src="item.src" alt />
         </div>
       </div>
     </div>
 
-    <div class="divider"></div>
+    <hr />
 
     <div class="group mdui-row">
       <!-- 关于我们板块 -->
       <div class="subgroup mdui-col-xs-12 mdui-col-md-4">
-        <h1 class="title mdui-text-color-theme-accent">关于我们</h1>
-        <div id="developers" class="developers">
-          <div v-for="item in developers" :key="item.name">
-            <img class="avatar jesse205-card-outlined" :src="item.avatar" draggable="false" alt />
-            <h1 class="mdui-text-center title">{{item.name}}</h1>
-            <p class="mdui-text-center subtitle mdui-text-color-theme-secondary">{{item.summary}}</p>
+        <h3 class="title mdui-text-color-theme-accent">关于我们</h1>
+          <div id="developers" class="developers">
+            <div v-for="item in developers" :key="item.name">
+              <div>
+                <img class="avatar jesse205-card-outlined" :src="item.avatar" draggable="false" alt />
+                <h4 class="mdui-text-center title">{{item.name}}</h4>
+                <p class="mdui-text-center subtitle mdui-text-color-theme-secondary">{{item.summary}}</p>
+              </div>
+            </div>
           </div>
-        </div>
       </div>
 
       <!-- 联系我们板块 -->
       <div class="subgroup mdui-col-xs-12 mdui-col-md-4">
-        <h1 class="title mdui-text-color-theme-accent">联系我们</h1>
+        <h3 class="title mdui-text-color-theme-accent">联系我们</h3>
         <div id="contact"
           class="item contact bottom-links mdui-row-xs-2 mdui-row-sm-4 mdui-row-md-2 mdui-row-lg-3 mdui-row-xl-4">
           <div v-for="item in contact" class="mdui-col" :key="item.title">
@@ -134,22 +134,27 @@
 
       <!-- 友情链接板块 -->
       <div class="subgroup mdui-col-xs-12 mdui-col-md-4">
-        <h1 class="title mdui-text-color-theme-accent">友情链接</h1>
+        <h3 class="title mdui-text-color-theme-accent">友情链接</h3>
         <div id="links"
           class="item links bottom-links mdui-row-xs-2 mdui-row-sm-4 mdui-row-md-2 mdui-row-lg-4 mdui-row-xl-5">
           <div v-for="item in links" class="mdui-col" :key="item.name">
             <a :href="item.href" target="_blank">
-              <div class="mdui-btn mdui-ripple mdui-text-color-theme-400 ">{{item.name}}</div>
+              <div class="mdui-btn mdui-ripple mdui-text-color-theme">{{item.name}}</div>
             </a>
           </div>
         </div>
       </div>
 
     </div>
+
     <footer>
-      <p> Copyright 2022 AideLua All Rights Reserved</p>
+      <p>Copyright 2022-2023 AideLua. All Rights Reserved.</p>
     </footer>
   </div>
+
+  <script>
+    app.mount('#app')
+  </script>
 </body>
 
 </html>

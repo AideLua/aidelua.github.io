@@ -29,7 +29,7 @@ const menus = [
   }
 ]
 
-let app = createApp({
+var app = createApp({
   data() {
     const plugins = ref(null)
     const isTop = ref(true)
@@ -64,6 +64,3 @@ let app = createApp({
   }
 })
 
-$$(function () {
-  app.mount('#app')
-})

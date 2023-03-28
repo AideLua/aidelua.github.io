@@ -4,8 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <!-- <base target="_blank"> -->
     <title>Aide Lua 插件库</title>
+    <meta name="author" content="Jesse205" />
+    <meta name="description" content="Aide Lua 插件下载官方页面" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -30,53 +31,47 @@
     <!-- 当前页面 -->
     <script type="text/javascript" src="js/plugins.js"></script>
     <link rel="stylesheet" href="css/plugins.css" />
-    <style>
-        .cardTitle {
-            font-size: 1rem;
-            font-weight: 500;
-        }
-    </style>
 </head>
 
-<body class="mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-indigo mdui-theme-layout-auto">
+<body class="mdui-appbar-with-toolbar mdui-theme-primary-blue mdui-theme-accent-blue mdui-theme-layout-auto">
     <div id="app">
         <!-- 标题栏 -->
-        <header>
-            <div class="mdui-appbar jesse205-shadow-transition mdui-appbar-fixed"
-                :class="{'mdui-shadow-0':isTop,'mdui-shadow-4':!isTop}">
-                <div class="mdui-toolbar">
-                    <p class="mdui-typo-title">Aide Lua 插件库</p>
-                    <div class="mdui-toolbar-spacer"></div>
-                    <template v-if="menus">
-                        <!-- 菜单区域 -->
-                        <template v-for="item in menus" :key="item.title">
-                            <a v-if="item.type=='menu'" :href="item.href"
-                                class="jesse205-btn-icon-text mdui-btn mdui-hidden-xs-down"
-                                :class="{'mdui-text-color-theme-accent': pathname==item.href }"
-                                :targrt="item.target">{{item.title}}</a>
-                        </template>
-                        <!-- 更多菜单按钮 -->
-                        <div class="mdui-btn mdui-btn-icon mdui-hidden-sm-up" mdui-menu="{target: '#menu-more'}"
-                            mdui-tooltip="{'content':'更多选项'}">
-                            <i class="mdui-icon material-icons">more_vert</i>
-                        </div>
-                        <!-- 弹出菜单 -->
-                        <ul class="mdui-menu" id="menu-more">
-                            <div>
-                                <template v-for="item in menus" :key="item.title">
-                                    <li v-if="item.type=='menu'" class="mdui-menu-item">
-                                        <a :href="item.href" class="mdui-ripple"
-                                            :class="{'mdui-text-color-theme-accent': pathname==item.href }"
-                                            :targrt="item.target">{{item.title}}</a>
-                                    </li>
-                                    <li v-else-if="item.type=='divider'" class="mdui-divider"></li>
-                                </template>
-                            </div>
-                        </ul>
+
+        <nav class="mdui-appbar jesse205-shadow-transition mdui-appbar-fixed"
+            :class="{'mdui-shadow-0':isTop,'mdui-shadow-4':!isTop}">
+            <div class="mdui-toolbar" :class="{'jesse205-toolbar-float':!isTop}">
+                <p class="mdui-typo-title">Aide Lua 插件库</p>
+                <div class="mdui-toolbar-spacer"></div>
+                <template v-if="menus">
+                    <!-- 菜单区域 -->
+                    <template v-for="item in menus" :key="item.title">
+                        <a v-if="item.type=='menu'" :href="item.href"
+                            class="jesse205-btn-icon-text mdui-btn mdui-hidden-xs-down"
+                            :class="{'mdui-text-color-theme-accent': pathname==item.href }"
+                            :targrt="item.target">{{item.title}}</a>
                     </template>
-                </div>
+                    <!-- 更多菜单按钮 -->
+                    <div class="mdui-btn mdui-btn-icon mdui-hidden-sm-up" mdui-menu="{target: '#menu-more'}"
+                        mdui-tooltip="{'content':'更多选项'}">
+                        <i class="mdui-icon material-icons">more_vert</i>
+                    </div>
+                    <!-- 弹出菜单 -->
+                    <ul class="mdui-menu" id="menu-more">
+                        <div>
+                            <template v-for="item in menus" :key="item.title">
+                                <li v-if="item.type=='menu'" class="mdui-menu-item">
+                                    <a :href="item.href" class="mdui-ripple"
+                                        :class="{'mdui-text-color-theme-accent': pathname==item.href }"
+                                        :targrt="item.target">{{item.title}}</a>
+                                </li>
+                                <li v-else-if="item.type=='divider'" class="mdui-divider"></li>
+                            </template>
+                        </div>
+                    </ul>
+                </template>
             </div>
-        </header>
+        </nav>
+
         <div v-if="!isLoaded" class="spinnerParent">
             <div class="mdui-spinner"></div>
         </div>
@@ -101,6 +96,10 @@
 
         </div>
     </div>
+
+    <script>
+        app.mount('#app')
+    </script>
 </body>
 
 </html>
