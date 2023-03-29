@@ -29,6 +29,7 @@
   <!-- MDUI -->
   <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" />
   <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/@mdi/font@7.2.96/css/materialdesignicons.min.css" />
 
   <!-- Jesse205Library -->
   <link rel="stylesheet" href="/css/jesse205.css" />
@@ -82,8 +83,13 @@
         <div class="app-goup-btn">
           <a id="download" class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent"
             href="https://gitee.com/AideLua/AideLua/releases/latest" target="_blank">
-            下载 {{appConfig && `(${appConfig.tag_name})`}}</a>
-          <a class="mdui-btn mdui-ripple" href="https://gitee.com/AideLua/AideLua" target="_blank">Gitee 仓库</a>
+            <i class="mdi mdi-download-outline"></i>
+            <span>下载 {{appConfig && `(${appConfig.tag_name})`}}</span>
+          </a>
+          <a class="mdui-btn mdui-ripple" href="https://gitee.com/AideLua/AideLua" target="_blank">
+            <span class="mdi mdi-source-branch"></span>
+            <span>开源仓库</span>
+          </a>
         </div>
 
       </div>
@@ -124,9 +130,12 @@
         <div id="contact"
           class="item contact bottom-links mdui-row-xs-2 mdui-row-sm-4 mdui-row-md-2 mdui-row-lg-3 mdui-row-xl-4">
           <div v-for="item in contact" class="mdui-col" :key="item.title">
-            <a class="jesse205-btn-outlined jesse205-btn-withicon mdui-hoverable-4 mdui-btn mdui-ripple"
-              :href="item.href" target="_blank" :mdui-tooltip='JSON.stringify(item.tooltip)'>
-              <i class="mdui-icon material-icons" :src="item.iconsrc" alt>{{item.icon}}</i>{{item.title}}</a>
+            <a class="mdui-btn mdui-btn-outlined mdui-hoverable-4 mdui-ripple" :href="item.href" target="_blank"
+              :mdui-tooltip='JSON.stringify(item.tooltip)'>
+              <i class="mdi" :class="[`mdi-${item.icon}`]"></i>
+              <span>{{item.title}}</span>
+            </a>
+
           </div>
         </div>
       </div>

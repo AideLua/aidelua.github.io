@@ -94,7 +94,7 @@ var app = createApp({
       contact: [
         {
           title: '电子邮件',
-          icon: 'mail',
+          icon: 'email-outline',
           href: 'mailto:jesse205@qq.com',
           tooltip: {
             content: '邮箱：jesse205@qq.com'
@@ -102,7 +102,7 @@ var app = createApp({
         },
         {
           title: 'QQ频道',
-          icon: 'group',
+          icon: 'account-group-outline',
           href: 'https://pd.qq.com/s/n51c4k',
           tooltip: {
             content: '频道号：t37c1u1nmw'
@@ -110,7 +110,7 @@ var app = createApp({
         },
         {
           title: '体验群',
-          icon: 'group',
+          icon: 'account-group-outline',
           href: 'https://jq.qq.com/?_wv=1027&k=aKHQdqlL',
           tooltip: {
             content: '群号：628045718'
@@ -118,7 +118,7 @@ var app = createApp({
         },
         {
           title: '内测群',
-          icon: 'group',
+          icon: 'account-group-outline',
           href: 'https://jq.qq.com/?_wv=1027&k=Zuzh1ypf',
           tooltip: {
             content: '群号：680850455'

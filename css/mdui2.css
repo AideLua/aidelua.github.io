@@ -81,6 +81,10 @@ body {
     border-color: var(--mdui-color-primary);
 }
 
+.mdui-btn>* {
+    vertical-align: top;
+    margin: 2px;
+}
 
 .mdui-card,
 .mdui-theme-layout-auto .mdui-card {
@@ -92,7 +96,8 @@ body {
     background-color: var(--mdui-color-surface-menu);
 }
 
-.mdui-card-outlined {
+.mdui-card-outlined,
+.mdui-btn-outlined {
     border: var(--mdui-line) !important;
 }
 
@@ -136,6 +141,25 @@ body {
 .mdui-panel-item,
 .mdui-theme-layout-auto .mdui-panel-item {
     background-color: var(--mdui-color-surface-toolbar);
+}
+
+.mdui-card-primary {
+    padding: 16px;
+}
+
+.mdui-card-primary-title,
+.mdui-card-primary-subtitle {
+    line-height: normal !important;
+
+}
+
+.mdui-card-primary-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.mdui-card-primary-subtitle {
+    font-size: 16px;
 }
 
 @media (prefers-color-scheme: dark) {
