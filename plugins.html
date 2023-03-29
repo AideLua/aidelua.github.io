@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" class="jesse205-theme-html-auto">
+<html lang="zh-CN" class="mdui-theme-html-auto">
 
 <head>
     <meta charset="utf-8" />
@@ -33,25 +33,23 @@
     <link rel="stylesheet" href="css/plugins.css" />
 </head>
 
-<body class="mdui-appbar-with-toolbar mdui-theme-primary-blue mdui-theme-accent-blue mdui-theme-layout-auto">
+<body class="mdui-appbar-with-toolbar mdui-theme-layout-auto">
     <div id="app">
         <!-- 标题栏 -->
-
-        <nav class="mdui-appbar jesse205-shadow-transition mdui-appbar-fixed"
-            :class="{'mdui-shadow-0':isTop,'mdui-shadow-4':!isTop}">
-            <div class="mdui-toolbar" :class="{'jesse205-toolbar-float':!isTop}">
+        <nav class="mdui-appbar mdui-appbar-fixed" :class="{'mdui-appbar-lifted':!isTop}">
+            <div class="mdui-toolbar" :class="{'mdui-toolbar-lifted':!isTop}">
                 <p class="mdui-typo-title">Aide Lua 插件库</p>
                 <div class="mdui-toolbar-spacer"></div>
                 <template v-if="menus">
                     <!-- 菜单区域 -->
                     <template v-for="item in menus" :key="item.title">
                         <a v-if="item.type=='menu'" :href="item.href"
-                            class="jesse205-btn-icon-text mdui-btn mdui-hidden-xs-down"
+                            class="jesse205-btn-icon-text mdui-btn mdui-ripple mdui-hidden-xs-down"
                             :class="{'mdui-text-color-theme-accent': pathname==item.href }"
                             :targrt="item.target">{{item.title}}</a>
                     </template>
                     <!-- 更多菜单按钮 -->
-                    <div class="mdui-btn mdui-btn-icon mdui-hidden-sm-up" mdui-menu="{target: '#menu-more'}"
+                    <div class="mdui-btn mdui-btn-icon mdui-ripple mdui-hidden-sm-up" mdui-menu="{target: '#menu-more'}"
                         mdui-tooltip="{'content':'更多选项'}">
                         <i class="mdui-icon material-icons">more_vert</i>
                     </div>
@@ -78,7 +76,7 @@
         <div v-if="plugins" id="plugins"
             class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4 mdui-row-xl-5 mdui-grid-list mdui-m-a-1">
             <div v-for="item in plugins" class="mdui-col mdui-p-a-1">
-                <div class="jesse205-card-outlined jesse205-hoverable mdui-card mdui-p-a-1">
+                <div class="mdui-card mdui-card-outlined mdui-hoverable-4 mdui-p-a-1">
                     <div class="mdui-card-menu">
                         <span>{{item.size}}</span>
                     </div>
@@ -88,12 +86,11 @@
                     </div>
                     <div class="mdui-m-a-1">{{item.description || '暂无介绍'}}</div>
                     <div class="mdui-m-a-1 mdui-text-color-theme-secondary">开发者：{{item.developer}}</div>
-                    <a :href="item.url" class="downloadBtn mdui-btn mdui-btn-icon mdui-color-theme">
+                    <a :href="item.url" class="downloadBtn mdui-btn mdui-btn-icon mdui-ripple mdui-color-theme">
                         <i class="mdui-icon material-icons">file_download</i>
                     </a>
                 </div>
             </div>
-
         </div>
     </div>
 

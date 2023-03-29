@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" class="jesse205-theme-html-auto">
+<html lang="zh-CN" class="mdui-theme-html-auto">
 
 <head>
   <meta charset="utf-8" />
@@ -39,12 +39,11 @@
   <script src="js/index.js"></script>
 </head>
 
-<body class="mdui-theme-primary-blue mdui-theme-accent-blue mdui-theme-layout-auto">
+<body class="mdui-theme-layout-auto">
   <div id="app">
     <!-- 标题栏 -->
-    <nav class="mdui-appbar jesse205-shadow-transition mdui-appbar-fixed"
-      :class="{'mdui-shadow-0':isTop,'mdui-shadow-4':!isTop}">
-      <div id="toolbar" class="toolbar mdui-toolbar" :class="{'toolbar-unfloat':isTop,'jesse205-toolbar-float':!isTop}">
+    <nav class="mdui-appbar mdui-appbar-fixed" :class="{'mdui-appbar-lifted':!isTop}">
+      <div id="toolbar" class="toolbar mdui-toolbar" :class="{'toolbar-unfloat':isTop,'mdui-toolbar-lifted':!isTop}">
         <p class="mdui-typo-title">{{name}}</p>
         <div class="mdui-toolbar-spacer"></div>
 
@@ -75,9 +74,9 @@
 
     <header>
       <img class="cover" src="images/top_background.png" draggable="false" alt />
-      <div>
+      <div id="appInfoSpace">
         <img class="icon mdui-shadow-4" src="images/aidelua_logo.svg" alt />
-        <h1 class="app-title mdui-text-color-theme-accent">{{name}}</h1>
+        <h1 class="app-title">{{name}}</h1>
         <h2 class="app-summary mdui-text-color-theme-secondary">{{description}}</h2>
 
         <div class="app-goup-btn">
@@ -95,9 +94,9 @@
     <div class="screenshots group mdui-container-fluid mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-4">
       <div>
         <div v-for="item in screenshot" class="screenshot-item mdui-container mdui-col">
-          <h4 class="title mdui-text-color-theme-accent">{{item.title}}</h4>
+          <h4 class="title">{{item.title}}</h4>
           <p class="subtitle mdui-text-color-theme-secondary">{{item.summary}}</p>
-          <img class="screenshot jesse205-card-outlined" :src="item.src" alt />
+          <img class="screenshot mdui-card-outlined" :src="item.src" alt />
         </div>
       </div>
     </div>
@@ -107,11 +106,11 @@
     <div class="group mdui-row">
       <!-- 关于我们板块 -->
       <div class="subgroup mdui-col-xs-12 mdui-col-md-4">
-        <h3 class="title mdui-text-color-theme-accent">关于我们</h1>
+        <h3 class="title">关于我们</h1>
           <div id="developers" class="developers">
             <div v-for="item in developers" :key="item.name">
               <div>
-                <img class="avatar jesse205-card-outlined" :src="item.avatar" draggable="false" alt />
+                <img class="avatar mdui-card-outlined" :src="item.avatar" draggable="false" alt />
                 <h4 class="mdui-text-center title">{{item.name}}</h4>
                 <p class="mdui-text-center subtitle mdui-text-color-theme-secondary">{{item.summary}}</p>
               </div>
@@ -121,11 +120,11 @@
 
       <!-- 联系我们板块 -->
       <div class="subgroup mdui-col-xs-12 mdui-col-md-4">
-        <h3 class="title mdui-text-color-theme-accent">联系我们</h3>
+        <h3 class="title">联系我们</h3>
         <div id="contact"
           class="item contact bottom-links mdui-row-xs-2 mdui-row-sm-4 mdui-row-md-2 mdui-row-lg-3 mdui-row-xl-4">
           <div v-for="item in contact" class="mdui-col" :key="item.title">
-            <a class="jesse205-btn-outlined jesse205-btn-withicon jesse205-hoverable mdui-btn mdui-ripple"
+            <a class="jesse205-btn-outlined jesse205-btn-withicon mdui-hoverable-4 mdui-btn mdui-ripple"
               :href="item.href" target="_blank" :mdui-tooltip='JSON.stringify(item.tooltip)'>
               <i class="mdui-icon material-icons" :src="item.iconsrc" alt>{{item.icon}}</i>{{item.title}}</a>
           </div>
@@ -134,7 +133,7 @@
 
       <!-- 友情链接板块 -->
       <div class="subgroup mdui-col-xs-12 mdui-col-md-4">
-        <h3 class="title mdui-text-color-theme-accent">友情链接</h3>
+        <h3 class="title">友情链接</h3>
         <div id="links"
           class="item links bottom-links mdui-row-xs-2 mdui-row-sm-4 mdui-row-md-2 mdui-row-lg-4 mdui-row-xl-5">
           <div v-for="item in links" class="mdui-col" :key="item.name">

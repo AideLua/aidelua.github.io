@@ -1,3 +1,6 @@
+body{
+	font-family: "HarmonyOS Sans SC";
+}
 .toolbar {
 	transition: all .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, 1, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
 }
@@ -50,6 +53,7 @@ header>div {
 .app-title {
 	font-size: 22px;
 	font-weight: 500;
+	color: var(--mdui-color-primary);
 }
 
 .app-summary {
@@ -93,6 +97,7 @@ header>div {
 	margin: 0;
 	font-size: 18px;
 	text-align: center;
+	color: var(--mdui-color-primary);
 }
 
 .subtitle {
@@ -209,34 +214,24 @@ footer {
 }
 
 @media (prefers-color-scheme: dark) {
-	.mdui-theme-layout-auto footer {
-		color: #F5F5F5;
-		background-color: #212121;
-	}
 
+	.mdui-theme-layout-auto footer,
 	.mdui-theme-layout-auto hr {
-		background-color: #212121;
+		color: #F5F5F5;
+		background-color: var(--mdui-color-background);
 	}
 
 	.mdui-theme-layout-auto .group {
-		background-color: #303030;
+		background-color: #343536;
 	}
 }
 
-@media screen and (min-width:300px) {
-	/* .developers>div {
-		width: 120px;
-	} */
-}
+@media screen and (min-width:300px) {}
 
 @media screen and (min-width:400px) {
 	.screenshots>div {
 		width: 90%;
 	}
-
-	/* .developers>div {
-		width: 140px;
-	} */
 }
 
 @media screen and (min-width:600px) {

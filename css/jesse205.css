@@ -1,34 +1,14 @@
-@import url(jesse205/shadow.css);
-@import url(jesse205/dialog.css);
-@import url(jesse205/panel.css);
-@import url(jesse205/menu.css);
-
-body {
-    /* 字体恢复为默认 */
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.mdui-toolbar {
-    background-color: white;
-    transition: all .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, 1, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
-}
+@import url(mdui2.css);
+/* @import url(jesse205/shadow.css); */
+/* @import url(jesse205/dialog.css); */
+/* @import url(jesse205/panel.css); */
+/* @import url(jesse205/menu.css); */
 
 .mdui-toolbar>.jesse205-toolbar-menusSpace {
     display: flex;
 }
 
-.mdui-overlay {
-    background: rgba(0, 0, 0, 0.35);
-}
-
-
 /* 卡片 */
-.jesse205-card-outlined {
-    border: 1px solid rgba(0, 0, 0, .12) !important;
-    border-radius: 8px;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
 
 .jesse205-card-media-covered-dark {
     color: white;
@@ -43,10 +23,6 @@ body {
 .jesse205-card-media-covered-auto {
     color: black;
     text-shadow: 0 0 5px white;
-}
-
-.mdui-card {
-    border-radius: 8px;
 }
 
 .mdui-card-primary {
@@ -100,9 +76,6 @@ body {
     text-transform: none;
 }
 
-.mdui-btn {
-    border-radius: 4px;
-}
 
 .mdui-btn-icon,
 .mdui-toolbar .mdui-btn-icon {
@@ -112,69 +85,17 @@ body {
     height: 40px;
 }
 
-/* indigo */
-.mdui-theme-primary-indigo .mdui-text-color-theme,
-.mdui-theme-accent-indigo .mdui-text-color-theme-accent {
-    color: #3F51B5 !important;
-}
-
-.mdui-theme-primary-indigo .mdui-color-theme,
-.mdui-theme-accent-indigo .mdui-color-theme-accent {
-    background-color: #5C6BC0 !important;
-}
-
-/* blue */
-.mdui-theme-primary-blue .mdui-text-color-theme,
-.mdui-theme-accent-blue .mdui-text-color-theme-accent {
-    color: #1A73E8 !important;
-}
-
-.mdui-theme-primary-blue .mdui-color-theme,
-.mdui-theme-accent-blue .mdui-color-theme-accent {
-    background-color: #1A73E8 !important;
-    color: #fff !important;
-}
-
-
-.mdui-panel-item-title {
-    width: auto;
-}
-
-.mdui-spinner {
-    width: 40px;
-    height: 40px;
-}
-
-.mdui-spinner-circle {
-    border-width: 4px !important;
-}
 
 @media (prefers-color-scheme: dark) {
-    .jesse205-theme-html-auto {
-        color-scheme: dark;
-    }
 
-    .mdui-theme-layout-auto {
-        background-color: #202124 !important;
-        color-scheme: dark;
-    }
-
-    .mdui-theme-layout-auto .mdui-toolbar {
-        background-color: #202124;
-    }
-
-    .mdui-theme-layout-auto .jesse205-toolbar-float {
-        background-color: #38393D;
-    }
-
-    .mdui-theme-layout-auto .jesse205-card-outlined {
+/*     .mdui-theme-layout-auto .jesse205-card-outlined {
         border: 1px solid rgba(255, 255, 255, .12) !important;
     }
 
     .mdui-theme-layout-auto .jesse205-card-media-covered-auto {
         color: white;
         text-shadow: 0 0 5px black;
-    }
+    } */
 
 
     .mdui-theme-layout-auto .jesse205-btn-outlined {

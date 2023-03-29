@@ -1,0 +1,164 @@
+@import url(mdui2/shadow.css);
+@import url(mdui2/radius.css);
+@import url(mdui2/animation.css);
+
+:root {
+    --mdui-color-white: #fff;
+    /* --mdui-color-google: #1A73E8; */
+    --mdui-color-google-blue-600: #1A73E8;
+    --mdui-color-google-blue-300: #8AB4F8;
+    --mdui-color-google-grey-900: #202124;
+
+    --mdui-color-primary: var(--mdui-color-google-blue-600);
+    --mdui-color-accent: var(--mdui-color-primary);
+    --mdui-color-surface: var(--mdui-color-background);
+    --mdui-color-surface-menu: var(--mdui-color-surface);
+    --mdui-color-surface-toolbar: var(--mdui-color-surface);
+    --mdui-color-background: var(--mdui-color-white);
+    --mdui-line: 1.5px solid rgba(0, 0, 0, .12);
+
+    --mdui-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html,
+body {
+    /* 字体恢复为默认 */
+    font-family: var(--mdui-font);
+    background-color: var(--mdui-color-background);
+}
+
+.mdui-text-color-theme {
+    color: var(--mdui-color-primary) !important;
+}
+
+.mdui-text-color-theme-accent {
+    color: var(--mdui-color-accent) !important;
+}
+
+.mdui-color-theme {
+    background-color: var(--mdui-color-primary) !important;
+    color: #fff !important;
+}
+
+.mdui-color-theme-accent {
+    background-color: var(--mdui-color-accent) !important;
+    color: #fff !important;
+}
+
+/* Blue */
+.mdui2-theme-accent-blue {
+    --mdui-accent: var(--mdui-google-blue-600);
+}
+
+.mdui2-theme-primary-blue {
+    --mdui-accent: var(--mdui-google-blue-600);
+}
+
+
+.mdui-overlay {
+    /* 修改默认overlay透明度 */
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.mdui-toolbar {
+    background-color: var(--mdui-color-background);
+}
+
+.mdui-toolbar-lifted {
+    background-color: var(--mdui-color-surface-toolbar);
+}
+
+.mdui-spinner {
+    width: 40px;
+    height: 40px;
+}
+
+.mdui-spinner-circle {
+    border-width: 4px !important;
+}
+
+.mdui-spinner-layer {
+    border-color: var(--mdui-color-primary);
+}
+
+
+.mdui-card,
+.mdui-theme-layout-auto .mdui-card {
+    background-color: var(--mdui-color-surface);
+}
+
+.mdui-menu,
+.mdui-theme-layout-auto .mdui-menu {
+    background-color: var(--mdui-color-surface-menu);
+}
+
+.mdui-card-outlined {
+    border: var(--mdui-line) !important;
+}
+
+/* 优化扩展面板 */
+.mdui-panel.mdui-panel-gapless {
+    overflow: hidden;
+}
+
+.mdui-panel-gapless .mdui-panel-item {
+    border-bottom: var(--mdui-line);
+}
+
+.mdui-panel-item-title {
+    width: auto;
+}
+
+.mdui-panel-item-header {
+    height: 48px;
+}
+
+.mdui-panel-item-open>.mdui-panel-item-header {
+    height: 48px;
+}
+
+.mdui-panel-item-arrow {
+    right: 12px;
+}
+
+.mdui-panel-item-open>.mdui-panel-item-header .mdui-panel-item-arrow {
+    top: 12px;
+}
+
+.mdui-panel-item-body::before {
+    height: 8px;
+}
+
+.mdui-panel-item-body::after {
+    height: 8px;
+}
+
+.mdui-panel-item,
+.mdui-theme-layout-auto .mdui-panel-item {
+    background-color: var(--mdui-color-surface-toolbar);
+}
+
+@media (prefers-color-scheme: dark) {
+    .mdui-theme-html-auto:root {
+        --mdui-color-primary: var(--mdui-color-google-blue-300);
+        --mdui-color-surface-menu: #38393D;
+        --mdui-color-surface-toolbar: #343536;
+        --mdui-color-background: var(--mdui-color-google-grey-900);
+        --mdui-line: 1.5px solid rgba(255, 255, 255, .12);
+    }
+
+    .mdui-theme-html-auto {
+        color-scheme: dark;
+    }
+
+    .mdui-theme-layout-auto {
+        color-scheme: dark;
+        background-color: var(--mdui-color-background);
+    }
+
+}
+
+.mdui-panel-item,
+.mdui-panel-gapless .mdui-panel-item:last-child {
+    border-bottom: none;
+}

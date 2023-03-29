@@ -2,6 +2,19 @@ const { createApp, ref, watchEffect } = Vue
 
 const RELEASES_URL = "https://gitee.com/api/v5/repos/Jesse205/AideLua/releases/latest"
 
+// 获取元素的绝对位置坐标（像对于页面左上角）
+function getElementPagePositionY(element) {
+
+  //计算y坐标
+  var actualTop = element.offsetTop;
+  var current = element.offsetParent;
+  while (current !== null) {
+    actualTop += (current.offsetTop + current.clientTop);
+    current = current.offsetParent;
+  }
+  //返回结果
+  return actualTop
+}
 
 var app = createApp({
   data: () => {
@@ -69,7 +82,7 @@ var app = createApp({
       developers: [
         {
           name: 'Eddie',
-          summary: 'AideLua软件及网站开发',
+          summary: '软件及网站开发',
           avatar: 'https://q1.qlogo.cn/headimg_dl?dst_uin=2140125724&spec=100'
         },
         {
@@ -159,7 +172,8 @@ var app = createApp({
   },
   mounted() {
     this.isTop = getTopState(window)
-    window.addEventListener('scroll', () => this.isTop = getTopState(window))
+    let infoSpaceY = getElementPagePositionY(document.getElementById('appInfoSpace'))
+    window.addEventListener('scroll', () => this.isTop = window.scrollY <= infoSpaceY)
     mdui.mutation()
   },
   updated() {
