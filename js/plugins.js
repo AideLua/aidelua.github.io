@@ -29,23 +29,23 @@ const menus = [
   }
 ]
 
+const isLoaded = ref(false)
+const plugins = ref(null)
+fetch(PLUGINS_URL)
+  .then((res) => res.json())
+  .then((json) => {
+    plugins.value = json
+  })
+  .finally(() => {
+    isLoaded.value = true
+  })
+  .catch(function (error) {
+    console.error(error)
+  })
+
 var app = createApp({
   data() {
-    const plugins = ref(null)
     const isTop = ref(true)
-    const isLoaded = ref(false)
-    fetch(PLUGINS_URL)
-      .then((res) => res.json())
-      .then((json) => {
-        plugins.value = json
-      })
-      .finally(() => {
-        isLoaded.value = true
-      })
-      .catch(function (error) {
-        console.error(error)
-      })
-
     return {
       plugins,
       menus,

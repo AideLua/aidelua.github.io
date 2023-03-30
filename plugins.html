@@ -23,6 +23,7 @@
     <!-- MDUI -->
     <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" />
     <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@mdi/font@7.2.96/css/materialdesignicons.min.css" />
 
     <!-- Jesse205Library -->
     <link rel="stylesheet" href="/css/jesse205.css" />
@@ -87,7 +88,7 @@
                     <div class="mdui-m-a-1">{{item.description || '暂无介绍'}}</div>
                     <div class="mdui-m-a-1 mdui-text-color-theme-secondary">开发者：{{item.developer}}</div>
                     <a :href="item.url" class="downloadBtn mdui-btn mdui-btn-icon mdui-ripple mdui-color-theme">
-                        <i class="mdui-icon material-icons">file_download</i>
+                        <i class="mdi mdui-icon mdi-download-outline"></i>
                     </a>
                 </div>
             </div>

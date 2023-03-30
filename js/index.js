@@ -15,6 +15,17 @@ function getElementPagePositionY(element) {
   //返回结果
   return actualTop
 }
+const appConfig = ref(null)
+
+fetch(RELEASES_URL)
+  .then((response) => response.json())
+  .catch(function (error) {
+    console.warn(error)
+  })
+  .then((json) => (appConfig.value = json))
+  .catch(function (error) {
+    console.warn(error)
+  })
 
 var app = createApp({
   data: () => {
@@ -155,17 +166,7 @@ var app = createApp({
     }
   },
   setup() {
-    const appConfig = ref(null)
 
-    fetch(RELEASES_URL)
-      .then((response) => response.json())
-      .catch(function (error) {
-        console.warn(error)
-      })
-      .then((json) => (appConfig.value = json))
-      .catch(function (error) {
-        console.warn(error)
-      })
     return {
       appConfig
     }

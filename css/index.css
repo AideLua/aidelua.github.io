@@ -43,8 +43,8 @@ header>div {
 .app-summary {
 	display: block;
 	margin: 8px;
-	margin-right: auto !important;
-	margin-left: auto !important;
+	margin-right: auto ;
+	margin-left: auto ;
 	text-align: center;
 	font-weight: 400;
 	width: fit-content;
@@ -62,56 +62,51 @@ header>div {
 }
 
 .app-goup-btn {
-	margin: 8px !important;
+	margin: 8px;
 	font-size: 0;
 }
 
 .app-goup-btn>a {
 	font-size: 16px;
-	margin: 8px !important;
+	margin: 8px;
 }
 
 .group {
 	background-color: #FFFFFF;
 	margin: auto;
-	padding-top: 8px !important;
-	padding-bottom: 8px !important;
+	padding-top: 8px ;
+	padding-bottom: 8px ;
 }
 
 .subgroup {
-	padding-top: 8px !important;
-	padding-bottom: 8px !important;
+	padding-top: 8px ;
+	padding-bottom: 8px ;
 }
 
 .title,
 .subtitle {
 	display: block;
-	margin-right: auto !important;
-	margin-left: auto !important;
-	text-align: center;
+	margin: 0 auto ;
 	font-weight: 400;
+	text-align: center;
+	color: var(--mdui-color-primary);
+	max-width: 250px
 }
 
 
 .title {
-	margin: 0;
 	font-size: 18px;
-	text-align: center;
-	color: var(--mdui-color-primary);
 }
 
 .subtitle {
-	margin: 0;
 	font-size: 14px;
-	max-width: 250px
 }
 
 hr {
 	background-color: #F5F5F5;
-	padding: 8px;
+	height: 16px;
 	border: hidden;
 	margin: 0;
-
 }
 
 .screenshots {

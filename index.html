@@ -50,11 +50,12 @@
 
         <!-- 菜单区域 -->
         <template v-for="item in menus" :key="item.title">
-          <a v-if="item.type=='menu'" :href="item.href" class="jesse205-btn-icon-text mdui-btn mdui-hidden-xs-down"
+          <a v-if="item.type=='menu'" :href="item.href"
+            class="jesse205-btn-icon-text mdui-btn mdui-ripple mdui-hidden-xs-down"
             :class="{'mdui-text-color-theme-accent': pathname==item.href }" :targrt="item.target">{{item.title}}</a>
         </template>
         <!-- 更多菜单按钮 -->
-        <div class="mdui-btn mdui-btn-icon mdui-hidden-sm-up" mdui-menu="{target: '#menu-more'}"
+        <div class="mdui-btn mdui-btn-icon mdui-ripple mdui-hidden-sm-up" mdui-menu="{target: '#menu-more'}"
           mdui-tooltip="{'content':'更多选项'}">
           <i class="mdui-icon material-icons">more_vert</i>
         </div>
