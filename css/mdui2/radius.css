@@ -1,6 +1,7 @@
 .mdui-btn,
 .mdui-dialog,
-.mdui-menu {
+.mdui-menu,
+.mdui-tooltip {
     border-radius: 4px;
 }
 
