@@ -203,6 +203,10 @@ body {
     font-size: 16px;
 }
 
+.mdui-ripple-wave {
+    transition-duration: 0.3s;
+}
+
 @media (prefers-color-scheme: dark) {
     .mdui-theme-html-auto:root {
         --mdui-color-primary: var(--mdui-color-google-blue-300);
