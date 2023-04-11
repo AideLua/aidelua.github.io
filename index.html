@@ -75,7 +75,7 @@
     </nav>
 
     <header>
-      <img class="cover" src="images/top_background.png" draggable="false" alt />
+      <img class="cover" src="images/top_background.webp" draggable="false" alt />
       <div id="appInfoSpace" class="appInfoSpace">
         <img class="app-icon mdui-shadow-4" src="images/aidelua_logo.svg" alt />
         <h1 class="app-title">{{name}}</h1>
@@ -101,7 +101,7 @@
     <div class="screenshots group mdui-container-fluid mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-4">
       <div>
         <div v-for="item in screenshot" class="screenshot-item mdui-container mdui-col">
-          <h4 class="title">{{item.title}}</h4>
+          <h3 class="title">{{item.title}}</h3>
           <p class="subtitle mdui-text-color-theme-secondary">{{item.summary}}</p>
           <img class="screenshot mdui-card-outlined" :src="item.src" alt />
         </div>

@@ -72,22 +72,22 @@ var app = createApp({
         {
           title: '丰富的支持库',
           summary: '多种多样的支持库，帮助用户战胜选择困难症',
-          src: 'images/screenshot_libraries.jpg'
+          src: 'images/screenshots/screenshot_libraries.webp'
         },
         {
           title: '强大的模板',
           summary: '采用模块化模板，大幅提升了模板定制难度',
-          src: 'images/screenshot_template.jpg'
+          src: 'images/screenshots/screenshot_template.webp'
         },
         {
           title: '自由的插件',
           summary: '随时出问题的插件，提升用户应急处突能力',
-          src: 'images/screenshot_plugins.jpg'
+          src: 'images/screenshots/screenshot_plugins.webp'
         },
         {
           title: '卡顿的体验',
           summary: '非常卡顿的体验，慢慢帮助用户摆脱手机开发',
-          src: 'images/screenshot_lag.jpg'
+          src: 'images/screenshots/screenshot_lag.webp'
         }
       ],
       developers: [
