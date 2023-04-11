@@ -1,13 +1,11 @@
-.mdi{
+.mdi {
+	/* 设置默认图标大小 */
 	font-size: 24px;
 }
-.toolbar {
-	transition: all .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, 1, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
-}
 
+.toolbar,
 .toolbar .mdui-typo-title {
 	transition: all .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, 1, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
-
 }
 
 .toolbar-unfloat {
@@ -19,7 +17,7 @@
 }
 
 
-header>div {
+.appInfoSpace {
 	text-align: center;
 	margin-top: -40px;
 	opacity: 0.9999999;
@@ -33,18 +31,19 @@ header>div {
 }
 
 
-.icon {
+.app-icon {
 	border-radius: 8px;
 	height: 80px;
 	width: 80px;
+	vertical-align: top;
 }
 
 .app-title,
 .app-summary {
 	display: block;
 	margin: 8px;
-	margin-right: auto ;
-	margin-left: auto ;
+	margin-right: auto;
+	margin-left: auto;
 	text-align: center;
 	font-weight: 400;
 	width: fit-content;
@@ -74,19 +73,19 @@ header>div {
 .group {
 	background-color: #FFFFFF;
 	margin: auto;
-	padding-top: 8px ;
-	padding-bottom: 8px ;
+	padding-top: 8px;
+	padding-bottom: 8px;
 }
 
 .subgroup {
-	padding-top: 8px ;
-	padding-bottom: 8px ;
+	padding-top: 8px;
+	padding-bottom: 8px;
 }
 
 .title,
 .subtitle {
 	display: block;
-	margin: 0 auto ;
+	margin: 0 auto;
 	font-weight: 400;
 	text-align: center;
 	color: var(--mdui-color-primary);
@@ -94,7 +93,8 @@ header>div {
 }
 
 
-.title {
+.title,
+.developers>div .title {
 	font-size: 18px;
 }
 
@@ -145,18 +145,30 @@ hr {
 	width: 50%;
 	min-width: 120px;
 	text-align: center;
+	padding: 8px;
+	font-size: 0;/* 去除空格 */
 }
 
-.developers>div>div {
-	padding: 8px;
+.developers>div>* {
+	font-size: 1rem;
+}
+
+.developers img {
+	vertical-align: middle;
+}
+
+.developers .title,
+.developers .subtitle {
+	width: 100%;
+	max-width: none;
 }
 
 .developers h4 {
-	margin: 2px;
+	padding: 2px;
 }
 
 .developers p {
-	margin: 2px;
+	padding: 2px;
 }
 
 
@@ -165,6 +177,8 @@ hr {
 	height: 56px;
 	border-radius: 50%;
 	margin: 8px;
+	display: block;
+    margin: auto;
 }
 
 .item {

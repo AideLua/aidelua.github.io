@@ -31,9 +31,26 @@
     --mdui-shadow-24: 0 7px 15px -7px rgba(0, 0, 0, 0.4), 0 20px 38px 3px rgba(0, 0, 0, 0.06), 0 5px 23px 8px rgba(0, 0, 0, 0.04);
 }
 
-.mdui-shadow-0,
-.mdui-hoverable-0:hover,
 .mdui-appbar {
+    box-shadow: var(--mdui-shadow-0)
+}
+
+.mdui-appbar-lifted {
+    box-shadow: var(--mdui-shadow-4);
+}
+
+.mdui-card {
+    box-shadow: var(--mdui-shadow-2);
+}
+
+.mdui-card-outlined,
+.mdui-panel-gapless .mdui-panel-item {
+    box-shadow: var(--mdui-shadow-0);
+}
+
+/* important */
+.mdui-shadow-0,
+.mdui-hoverable-0:hover {
     box-shadow: var(--mdui-shadow-0) !important;
 }
 
@@ -45,7 +62,6 @@
 .mdui-shadow-2,
 .mdui-btn-raised,
 .mdui-hoverable-2:hover,
-.mdui-card,
 .mdui-panel-gapless,
 .mdui-panel-item {
     box-shadow: var(--mdui-shadow-2) !important;
@@ -58,8 +74,7 @@
 
 .mdui-shadow-4,
 .mdui-btn-raised:hover,
-.mdui-hoverable-4:hover,
-.mdui-appbar-lifted {
+.mdui-hoverable-4:hover {
     box-shadow: var(--mdui-shadow-4) !important;
 }
 
@@ -172,10 +187,6 @@
     box-shadow: var(--mdui-shadow-24) !important;
 }
 
-.mdui-card-outlined,
-.mdui-panel-gapless .mdui-panel-item {
-    box-shadow: var(--mdui-shadow-0) !important;
-}
 
 .mdui-shadow-transition,
 .mdui-hoverable,
@@ -203,6 +214,6 @@
 .mdui-hoverable-22,
 .mdui-hoverable-23,
 .mdui-appbar {
-    transition: box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow .25s cubic-bezier(.4, .2, 0, 1) !important;
+    transition: box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow .25s cubic-bezier(.4, .2, 0, 1);
     will-change: box-shadow;
 }

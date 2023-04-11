@@ -93,7 +93,7 @@ var app = createApp({
       developers: [
         {
           name: 'Eddie',
-          summary: '软件及网站开发',
+          summary: '软件&网站开发',
           avatar: 'https://q1.qlogo.cn/headimg_dl?dst_uin=2140125724&spec=100'
         },
         {

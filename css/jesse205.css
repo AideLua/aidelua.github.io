@@ -1,8 +1,14 @@
 @import url(mdui2.css);
+
 /* @import url(jesse205/shadow.css); */
 /* @import url(jesse205/dialog.css); */
 /* @import url(jesse205/panel.css); */
 /* @import url(jesse205/menu.css); */
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
 
 .mdui-toolbar>.jesse205-toolbar-menusSpace {
     display: flex;

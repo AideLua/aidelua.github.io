@@ -76,8 +76,8 @@
 
     <header>
       <img class="cover" src="images/top_background.png" draggable="false" alt />
-      <div id="appInfoSpace">
-        <img class="icon mdui-shadow-4" src="images/aidelua_logo.svg" alt />
+      <div id="appInfoSpace" class="appInfoSpace">
+        <img class="app-icon mdui-shadow-4" src="images/aidelua_logo.svg" alt />
         <h1 class="app-title">{{name}}</h1>
         <h2 class="app-summary mdui-text-color-theme-secondary">{{description}}</h2>
 
@@ -116,11 +116,9 @@
         <h3 class="title">关于我们</h1>
           <div id="developers" class="developers">
             <div v-for="item in developers" :key="item.name">
-              <div>
                 <img class="avatar mdui-card-outlined" :src="item.avatar" draggable="false" alt />
                 <h4 class="mdui-text-center title">{{item.name}}</h4>
                 <p class="mdui-text-center subtitle mdui-text-color-theme-secondary">{{item.summary}}</p>
-              </div>
             </div>
           </div>
       </div>
