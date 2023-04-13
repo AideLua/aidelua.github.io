@@ -51,7 +51,7 @@
         <!-- 菜单区域 -->
         <template v-for="item in menus" :key="item.title">
           <a v-if="item.type=='menu'" :href="item.href"
-            class="jesse205-btn-icon-text mdui-btn mdui-ripple mdui-hidden-xs-down"
+            class="mdui-btn mdui-ripple mdui-hidden-xs-down"
             :class="{'mdui-text-color-theme-accent': pathname==item.href }" :targrt="item.target">{{item.title}}</a>
         </template>
         <!-- 更多菜单按钮 -->

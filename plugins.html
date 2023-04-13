@@ -45,7 +45,7 @@
                     <!-- 菜单区域 -->
                     <template v-for="item in menus" :key="item.title">
                         <a v-if="item.type=='menu'" :href="item.href"
-                            class="jesse205-btn-icon-text mdui-btn mdui-ripple mdui-hidden-xs-down"
+                            class="mdui-btn mdui-ripple mdui-hidden-xs-down"
                             :class="{'mdui-text-color-theme-accent': pathname==item.href }"
                             :targrt="item.target">{{item.title}}</a>
                     </template>
@@ -77,7 +77,7 @@
         <div v-if="plugins" id="plugins"
             class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4 mdui-row-xl-5 mdui-grid-list mdui-m-a-1">
             <div v-for="item in plugins" class="mdui-col mdui-p-a-1">
-                <div class="mdui-card mdui-card-outlined mdui-hoverable-4 mdui-p-a-1">
+                <div class="mdui-card mdui-card-outlined mdui-hoverable-2 mdui-p-a-1">
                     <div class="mdui-card-menu">
                         <span>{{item.size}}</span>
                     </div>
@@ -87,7 +87,7 @@
                     </div>
                     <div class="mdui-m-a-1">{{item.description || '暂无介绍'}}</div>
                     <div class="mdui-m-a-1 mdui-text-color-theme-secondary">开发者：{{item.developer}}</div>
-                    <a :href="item.url" class="downloadBtn mdui-btn mdui-btn-icon mdui-hoverable-4 mdui-ripple mdui-color-theme">
+                    <a :href="item.url" class="downloadBtn mdui-btn mdui-btn-icon mdui-ripple mdui-color-theme">
                         <i class="mdi mdui-icon mdi-download-outline"></i>
                     </a>
                 </div>
