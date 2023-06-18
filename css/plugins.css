@@ -18,3 +18,19 @@
     align-items: center;
     position: fixed;
 }
+
+
+.tip-danger {
+    background-color: rgba(255, 152, 0, 0.133) !important;
+    color: #FF9800;
+    margin: 16px;
+    display: flex;
+    padding: 4px;
+    border-radius: 8px;
+    align-items: center;
+    max-width: 600px;
+}
+
+.tip-danger>* {
+    margin: 4px;
+}

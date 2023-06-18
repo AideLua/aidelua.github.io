@@ -216,6 +216,7 @@ footer {
 	text-align: center
 }
 
+
 @media (prefers-color-scheme: dark) {
 
 	.mdui-theme-layout-auto footer,
@@ -290,6 +291,5 @@ footer {
 		margin-left: auto !important;
 		margin-right: auto !important;
 	}
-
 
 }

@@ -155,7 +155,7 @@ var app = createApp({
         },
         {
           name: '哈兔Box',
-          href: 'https://gitee.com/Jesse205/hellotool'
+          href: 'https://jesse205.github.io/hellotool/'
         },
         {
           name: '云储',
