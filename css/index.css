@@ -164,6 +164,7 @@ hr {
 .developers .subtitle {
 	width: 100%;
 	max-width: none;
+	color: var(--mdui-color-on-background);
 }
 
 .developers h4 {
@@ -264,19 +265,12 @@ footer {
 		width: 90%;
 	}
 
-	/* .developers>div {
-		width: 120px;
-	} */
 }
 
 @media screen and (min-width:1440px) {
 	.screenshots>div {
 		width: 80%;
 	}
-
-	/* .developers>div {
-		width: 160px;
-	} */
 
 	.links>div {
 		padding: 4px;
