@@ -3,9 +3,8 @@
 	font-size: 24px;
 }
 
-.toolbar,
 .toolbar .mdui-typo-title {
-	transition: all .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, 1, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
+	transition: opacity .2s cubic-bezier(.4, 0, .2, 1);
 }
 
 .toolbar-unfloat {
@@ -71,6 +70,7 @@
 	margin: auto;
 	padding-top: 8px;
 	padding-bottom: 8px;
+	transition: background-color .2s cubic-bezier(.4, 0, .2, 1);
 }
 
 .subgroup {
@@ -103,6 +103,7 @@ hr {
 	height: 16px;
 	border: hidden;
 	margin: 0;
+	transition: background-color .2s cubic-bezier(.4, 0, .2, 1);
 }
 
 .screenshots {
@@ -214,7 +215,8 @@ footer {
 	padding: 8px;
 	color: #616161;
 	background-color: #F5F5F5;
-	text-align: center
+	text-align: center;
+	transition: background-color .2s cubic-bezier(.4, 0, .2, 1);
 }
 
 
