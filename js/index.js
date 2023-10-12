@@ -59,7 +59,7 @@ var app = createApp({
           type: "menu",
         },
         {
-          title: "Github 仓库",
+          title: "GitHub 仓库",
           href: "https://github.com/AideLua/AideLua",
           target: "_blank",
           type: "menu",
