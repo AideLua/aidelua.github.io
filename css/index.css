@@ -113,6 +113,8 @@ hr {
 .screenshots>div {
 	margin-left: auto;
 	margin-right: auto;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .screenshot {
@@ -125,6 +127,8 @@ hr {
 	padding-left: 24px !important;
 	padding-right: 24px !important;
 	padding: 8px;
+	float: none;
+	margin: 0;
 }
 
 .screenshot-item>p {
