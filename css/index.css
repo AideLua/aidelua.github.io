@@ -247,7 +247,7 @@ footer {
 		width: 112px
 	}
 
-	header>img {
+	header>.cover {
 		height: 200px;
 	}
 
