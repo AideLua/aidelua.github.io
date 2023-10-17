@@ -15,14 +15,14 @@ function getElementPagePositionY(element) {
   //返回结果
   return actualTop
 }
-const appConfig = ref(null)
+// const appConfig = ref(null)
 
-fetch(RELEASES_URL, { cache: "force-cache" })
+/*fetch(RELEASES_URL, { cache: "force-cache" })
   .then(response => response.json())
   .then(json => (appConfig.value = json))
   .catch(function (error) {
     console.warn(error)
-  })
+  })*/
 
 var app = createApp({
   data: () => {
@@ -164,7 +164,7 @@ var app = createApp({
   },
   setup() {
     return {
-      appConfig,
+      // appConfig,
     }
   },
   mounted() {
